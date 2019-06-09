@@ -39,3 +39,26 @@ def create_author():
         return redirect(url_for('main.display_authors'))
 
     return render_template('create_author.htm', form=form)
+
+
+# def create_book():
+#     form = CreateBookForm(request.form)
+#     if request.method == 'POST' and form.validate():
+#         names = form.names.data
+#         current_app.logger.info('Adding a new book %s.', (names))
+#         book = Author(names)
+#
+#         try:
+#             db.session.add(book)
+#             db.session.commit()
+#             cache.clear()
+#             flash('Book successfully created.')
+#         except exc.SQLAlchemyError as e:
+#             flash('Book was not created.')
+#             current_app.logger.error(e)
+#
+#             return redirect(url_for('admin.create_book'))
+#
+#         return redirect(url_for('main.display_authors'))
+#
+#     return render_template('create_book.htm', form=form)
